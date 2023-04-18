@@ -4,8 +4,6 @@ plp.LpSolverDefault.msg = 0
 
 
 def vogel_approximation_method(costs, supply, demand):
-
-
     INF = 10 ** 3
     n, m = costs.shape
     ans = 0
