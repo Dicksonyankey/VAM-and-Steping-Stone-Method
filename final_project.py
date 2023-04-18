@@ -71,8 +71,7 @@ def solve_stepping_stone(supply, demand, costs):
     # Solve the LP problem and print the results
     status = model.solve()
     if status == plp.LpStatusOptimal:
-        return plp.value(model.objective), {(i, j): plp.value(allocation[(i, j)]) for i in range(len(supply)) for j in
-                                            range(len(demand))}
+        return plp.value(model.objective), {(i, j): plp.value(allocation[(i, j)]) for i in range(len(supply)) for j in range(len(demand))}
     else:
         return None, None
 
