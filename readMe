@@ -1,0 +1,64 @@
+This script solves the transportation problem using the Vogel's Approximation Method (VAM) and the Stepping Stone Method.
+The transportation problem is a linear programming problem that involves finding the optimal way to transport goods
+from multiple sources to multiple destinations, given the supply and demand constraints and the transportation costs.
+
+Class:
+- RENEWABLE ENERGY ENGINEERING (RN4) MINI PROJECT
+
+Program Areas:
+- Vogel's Approximation Method
+- Stepping Stone Method
+
+Installed Packages:
+- Install numpy
+- install pulp k
+
+Functions:
+- vogel_approximation_method(costs, supply, demand):
+    This function implements the VAM algorithm to solve the transportation problem.
+    Parameters:
+        - costs: a numpy array of shape (n, m) that represents the transportation costs between n sources and m destinations.
+        - supply: a numpy array of length n that represents the available supply at each source.
+        - demand: a numpy array of length m that represents the required demand at each destination.
+    Returns:
+        - ans: the total cost of transportation.
+        - allocations: a numpy array of shape (n, m) that represents the optimal allocations of goods.
+
+- solve_stepping_stone(supply, demand, costs):
+    This function implements the Stepping Stone algorithm to improve the initial solution obtained from VAM.
+    Parameters:
+        - supply: a numpy array of length n that represents the available supply at each source.
+        - demand: a numpy array of length m that represents the required demand at each destination.
+        - costs: a numpy array of shape (n, m) that represents the transportation costs between n sources and m destinations.
+    Returns:
+        - obj_value: the optimal objective function value.
+        - allocation: a dictionary of decision variables and their values.
+
+Usage:
+- Define the cost matrix and supply/demand arrays.
+- Call the `vogel_approximation_method` function to obtain the initial solution.
+- Call the `solve_stepping_stone` function to improve the initial solution.
+- Print the results.
+
+
+Limitations:
+- The program solves balanced and unbalanced transportation problems.
+- Prohibited routes are not supported.
+
+
+Example problems:
+- Define the cost matrix and supply/demand arrays Example 1
+- costs = np.array([[24, 28, 32], [14, 32, 24], [0, 0, 0]])
+- supply = np.array([4000, 6000, 600])
+- demand = np.array([4400, 3400, 2800])
+
+- Define the cost matrix and supply/demand arrays  Example 2
+- costs = np.array([[9, 10, 15, 0], [8, 6, 12, 0], [8, 14, 10, 0]])  # table for cost
+- supply = [400, 300, 500]  # supply
+- demand = [320, 480, 280, 120]  # demand
+
+Note:
+- This script requires the `numpy` and `pulp` packages.
+- You need Python installed locally on your MC or PC
+- The python version 3.10
+
